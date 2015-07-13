@@ -53,6 +53,9 @@ module PagSeguro
     # Timeout value in seconds for requests.
     attr_accessor :timeout
 
+    # Charset when submitting the POST to Pagseguro
+    attr_accessor :charset
+
     def api_url(version)
       uris.fetch(environment) + version
     end
@@ -67,6 +70,7 @@ module PagSeguro
   end
 
   self.environment = :production
+  self.charset = "UTF-8"
 
   # Set the global configuration.
   #
